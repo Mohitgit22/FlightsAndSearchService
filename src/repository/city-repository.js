@@ -1,6 +1,7 @@
 const { City } = require('../models/index');
 
 class CityRepository {
+
     async createCity({ name }){
         try{
              const city = await City.create({ name });
@@ -45,6 +46,7 @@ async deleteCity( cityId ){
   }
 
 
+
  // finds by Primary Key : Pk
   async getCity( cityId ){
     try {
@@ -62,9 +64,5 @@ async deleteCity( cityId ){
 
 // exported the CLASS made for using to create and delete in the table
 module.exports = CityRepository;
-
-
-
-
 
 // use the link to refer to functions like .destroy , .findbypk , .update : https://sequelize.org/docs/v6/core-concepts/model-querying-basics/

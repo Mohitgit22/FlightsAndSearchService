@@ -1,3 +1,5 @@
-// rather than making many 'require' statements (for eg.. writing 10 require statements) , we make a index.js file and export them as a single file
+// rather than making many 'require' statements (for eg.. writing 10 require statements) for many different type of repositories , we make a index.js file and export them as a single file 
 
-module
+module.exports = {
+   CityRepository : require('city-repository'),
+}

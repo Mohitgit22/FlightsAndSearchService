@@ -3,12 +3,12 @@ const { CityRepository } = require('../repository/index');
 class CityService { 
     constructor() {
         // making a new object
-        this.CityRepository = new CityRepository();
+        this.cityRepository = new CityRepository();
     }
 
     async createCity( data) {
        try {
-           const res_city = await this.CityRepository.createCity( data );
+           const res_city = await this.cityRepository.createCity( data );
            return res_city;
        } catch (error) {
          console.log("Some went wrong at service layer");
@@ -18,7 +18,7 @@ class CityService {
 
     async deleteCity() {
         try {
-            const response = await this.CityRepository.deleteCity(cityId);
+            const response = await this.cityRepository.deleteCity(cityId);
             return response;
         } catch (error) {
           console.log("Some went wrong at service layer");
