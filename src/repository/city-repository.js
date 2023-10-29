@@ -30,7 +30,7 @@ async deleteCity( cityId ){
 
 
   // data : since we have only  name as parameter in city.js , we are just giving it as "name" argument
-  async updateCity( cityId,  data){
+  async updateCity( cityId,  data){ // data == {name : Allahabad }==> {name : Prayagraj }
     try {
         const city = await  City.update(data, {
             where: {
@@ -45,7 +45,7 @@ async deleteCity( cityId ){
   }
 
 
-
+ // finds by Primary Key : Pk
   async getCity( cityId ){
     try {
         const city = await City.findByPk(cityId);
