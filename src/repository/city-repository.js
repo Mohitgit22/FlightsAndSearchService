@@ -1,5 +1,7 @@
 const { City } = require('../models/index');
 
+// retrieving the npm package for filtering
+const { Op } = require('sequelize');
 class CityRepository {
 
     async createCity(data){
@@ -69,8 +71,19 @@ async deleteCity( cityId ){
   }
    
 
-  async getAllCities(){
+  async getAllCities(filter){    // filter can be empty also
     try {
+        // filering till line 86
+        if(filter.name) {
+            const cities = await City.findAll({
+                where: {
+                    name: {
+                     [Op.startsWith]: filter.name
+                    }
+                }
+            });
+            return cities;
+        }
         const cities = await City.findAll();
         return cities;  
     } catch (error) {
