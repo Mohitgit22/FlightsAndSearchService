@@ -1,0 +1,15 @@
+// /birds/
+// /birds/about
+// /birds/help
+
+// app.get(/birds => )
+
+// app.get('/', (req, res) => ())
+// app.get('/birds/about ',(req, res) => ())
+// app.get(' /birds/help', (req, res)=> ())
+
+// .  TO AVOID THIS WE USE EXPRESS ROUTER
+
+
+// for API : controller (me kam hoga , wo bulayega files ko from this path) -> services - > repository
+// repository->services->controller

@@ -16,6 +16,7 @@ const cityService = new CityService();
 
 const create = async (req, res) => {
     try {
+        //console.log(req.body);
         const city = await cityService.createCity(req.body);
         return res.status(201).json({
             data: city,
@@ -39,7 +40,8 @@ const create = async (req, res) => {
 // DELETE -> /city/:id ; (url should be like this for deleting -> id should be there-> id is in req.params for delete ----> that's why req.params)
 const destroy = async ( req, res) => {
     try {
-        const response = await cityService.createCity(req.params.id);
+        //console.log(req.params);
+        const response = await cityService.deleteCity(req.params.id);
         return res.status(200).json({
             data: response,
             success: true,
@@ -61,11 +63,12 @@ const destroy = async ( req, res) => {
 // Patch -> /city/:id ->req.body
 const update =  async (req, res) => {
     try {
+        //console.log(req.body);
         const response = await cityService.updateCity(req.params.id,req.body);
         return res.status(201).json({
-            data: city,
+            data: response,
             success: true,
-            message: "successfully created a city ",
+            message: "successfully updated the city ",
             err: {}
         });
     } catch (error) {
@@ -74,7 +77,7 @@ const update =  async (req, res) => {
          return res.status(500).json({
            data: {},
            success: false,
-           message: "Not able to delete the city",
+           message: "Not able to update the city",
            err: error
          });
     }
@@ -84,11 +87,12 @@ const update =  async (req, res) => {
 // GET -> /city/:id 
 const get =  async (req, res) => {
     try {
-        const response = await CityService.getCity(req.params.id);
+        //console.log(req.params);
+        const response = await cityService.getCity(req.params.id);
         return res.status(200).json({
             data: response,
             success: true,
-            message: "successfully fetched a city ",
+            message: " successfully fetched a city ",
             err: {}
         });
     } catch (error) {

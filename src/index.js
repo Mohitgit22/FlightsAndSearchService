@@ -6,7 +6,9 @@ const bodyParser = require("body-parser");
 
 const { PORT } = require('./config/serverConfig');  
 
-const CityRepository = require('./repository/city-repository');
+const ApiRoutes = require('./routes/index');
+
+// const CityRepository = require('./repository/city-repository');
 
 const setupAndStartServer = async () => {
    
@@ -15,8 +17,10 @@ const setupAndStartServer = async () => {
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended : true}));
+
+    app.use('/api', ApiRoutes);
     
-    app.listen(PORT, async()=>{
+    app.listen(PORT, async () => {
      console.log(`Server started at ${PORT}`);
 
         // individual create krne ki jagah humne hum ye kaam repositroy mein karwaenge b,coz all interactions of models should be from repository
@@ -26,10 +30,10 @@ const setupAndStartServer = async () => {
 
 
      // interactions through repository
-     const repo = new CityRepository();
+    // const repo = new CityRepository();
     //  repo.createCity({ name : "New Delhi"});
     //  repo.createCity({ name : "Patna"});
-     repo.createCity({ name : "gaya"});
+    // repo.createCity({ name : "gaya"});
 
     //  const repo = new CityRepository();
     //  repo.deleteCity(1);
