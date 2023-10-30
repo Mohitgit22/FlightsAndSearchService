@@ -60,6 +60,7 @@ const destroy = async ( req, res) => {
     }
 }
 
+
 // Patch -> /city/:id ->req.body
 const update =  async (req, res) => {
     try {
@@ -107,9 +108,33 @@ const get =  async (req, res) => {
     }
 }
 
+
+const getAll = async (req, res) => {
+    try {
+        const cities = await cityService.getAllCities();
+        return res.status(200).json({
+            data : cities,
+            success: true,
+            message : "successfully fetched all ",
+            err: {}
+        }); 
+        
+    } catch (error) {
+        //we will not throw the error here , otherwise we will not be able to stop the error mapping
+        console.log(error);
+        return res.status(500).json({
+          data: {},
+          success: false,
+          message: "Not able to get the cities",
+          err: error
+        });
+    }
+}
+
 module.exports = {
     create,
     destroy,
     get,
-    update 
+    update ,
+    getAll
 }
