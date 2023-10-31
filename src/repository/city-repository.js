@@ -2,6 +2,8 @@ const { City } = require('../models/index');
 
 // retrieving the npm package for filtering
 const { Op } = require('sequelize');
+
+
 class CityRepository {
 
     async createCity(data){
