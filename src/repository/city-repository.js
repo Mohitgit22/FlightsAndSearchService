@@ -8,10 +8,10 @@ class CityRepository {
 
     async createCity(data){
         try{
-            console.log("repository ", data);
+          //  console.log("repository ", data);
              const city = await City.create(data);
              return city;
-        }catch(error){
+        } catch (error){
             console.log("Something went wrong in the repository layer");
              throw { error };
         }
@@ -63,7 +63,7 @@ async deleteCity( cityId ){
  // finds by Primary Key : Pk
   async getCity(cityId){
     try {
-        console.log("repository  to get ", cityId);
+       // console.log("repository  to get ", cityId);
         const city = await City.findByPk(cityId);
         return city;
     } catch (error) {
