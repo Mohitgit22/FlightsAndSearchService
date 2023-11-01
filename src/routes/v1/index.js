@@ -12,6 +12,7 @@ router.get('/city',CityController.getAll);
 
 
 router.post('/flights',FlightController.create);
+router.get('/flights', FlightController.getAll);
 
 
 

@@ -9,10 +9,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      // name: {
+      //   type: Sequelize.STRING,
+      //   allowNull: false,
+      //   unique: true
+      // },
       name: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true
+        unique:'column'
       },
       createdAt: {
         allowNull: false,

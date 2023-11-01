@@ -58,9 +58,10 @@ const setupAndStartServer = async () => {
     // for getting all the airports of a particular city 
     // Model Synchronization
     //https://sequelize.org/docs/v7/models/model-synchronization/ -------->
-    if( process.env.SYNC_DB) {
-         db.sequelize.sync({alter: true});
-    }
+
+    // if( process.env.SYNC_DB) {
+    //      db.sequelize.sync({alter: true});
+    // }
     
     });
 }
