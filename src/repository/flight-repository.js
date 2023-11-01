@@ -48,6 +48,7 @@ class FlightRepository {
 
     async createFlight(data) {
         try {
+            console.log(" doing good in flights repo ")
             const flight = await Flights.create(data);
             return flight;
         } catch (error) {
